@@ -9,7 +9,9 @@ def PostList(request):
     return render(request, "Blog/index.html", context)
 
 
-def PostDetail(request, slug_post):
-    return render(request, "Blog/post_detail.html")
+def PostDetail(request, slug):
+    detail = Post.objects.get(slug=slug)
+    context = {"detail": detail}
+    return render(request, "Blog/post_detail.html", context)
 
 
