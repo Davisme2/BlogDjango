@@ -1,11 +1,24 @@
 
 <!-- Sidebar Widgets Column -->
-<div class="col-md-4 mt-3 pt-4 float-right ">
-  <div class="card my-4">
+<div class="col-md-4 pt-4 float-right ">
+  <div class="card my-2">
+      <h5 class="card-header">Catégories</h5>
+      <div class="card-body">
+          <ul class="list-group list-group-flush">
+            {% for cats in cat %}
+                <li class="list-group-item">{{ cats.name }}</li>
+            {% endfor %}
+          </ul>
+      </div>
+  </div>
+    <div class="card my-2">
       <h5 class="card-header">Recettes en relation</h5>
       <div class="card-body">
-          <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-          <a href="https://djangocentral.com/building-a-blog-application-with-django" class="btn btn-danger">Know more!</a>
+          <ul class="list-group list-group-flush">
+            {% for recetteEnRelations in recetteEnRelation %}
+                <li class="list-group-item">{{ recetteEnRelations.title }}</li>
+            {% endfor %}
+          </ul>
       </div>
   </div>
 </div>
